@@ -1,0 +1,104 @@
+.model {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 554px;
+  margin: 0 auto;
+  background: #ffffff;
+  overflow: hidden;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.model-text {
+  position: absolute;
+  top: 67px;
+  left: 165px;
+  width: 576px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.model-text h2 {
+  font-size: 44px;
+  line-height: 55px;
+  font-weight: 700;
+  color: #333;
+}
+.model-text p {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 0.8);
+}
+
+.logo { 
+    position: absolute; 
+    display: block; 
+}
+.logo.scania  {
+     top: 71px;  left: 811px;  
+     width: 175.75px; 
+     height: 101.99px; 
+    }
+
+.logo.volvo   { 
+    top: 63px; 
+    left: 1146px; 
+    width: 129px;    
+    height: 127px; 
+}
+
+.logo.man     { 
+    top: 222px; 
+    left: 1001px; 
+    width: 131px;    
+    height: 74px; 
+}
+
+.logo.daf     { 
+    top: 384px; 
+    left: 811px;  
+    width: 176px;    
+    height: 48px; 
+}
+
+.logo.renault { 
+    top: 327px; 
+    left: 1134px; 
+    width: 141px;    
+    height: 161px; 
+    mix-blend-mode: multiply; 
+}
+
+/* Laptop: same layout, logos shifted in to fit narrower widths */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .model-text { left: 40px; width: 460px; }
+  .model-text h2 { font-size: 36px; line-height: 1.3; }
+  .logo.scania  { left: 650px; }
+  .logo.man     { left: 840px; }
+  .logo.volvo   { left: 985px; }
+  .logo.daf     { left: 650px; }
+  .logo.renault { left: 973px; }
+}
+
+/* Tablet: stack text above a flexible row of logos */
+@media (max-width: 1023px) {
+  .model { height: auto; padding: 40px 20px; display: flex; flex-direction: column; gap: 32px; }
+  .model-text { position: static; width: 100%; }
+  .model-text h2 { font-size: 32px; line-height: 1.25; }
+  .model-logos { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 40px; }
+  .logo { position: static; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .model { padding: 32px 16px; gap: 24px; }
+  .model-text h2 { font-size: 24px; }
+  .model-text p { font-size: 14px; line-height: 20px; }
+  .model-logos { gap: 16px 24px; justify-content: center; }
+  .logo.scania  { width: 110px; height: 64px; }
+  .logo.volvo   { width: 90px;  height: 89px; }
+  .logo.man     { width: 90px;  height: 51px; }
+  .logo.daf     { width: 120px; height: 33px; }
+  .logo.renault { width: 90px;  height: 103px; }
+}

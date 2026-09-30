@@ -1,0 +1,94 @@
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 551px;            
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.hero-text {
+  position: absolute;
+  top: 65px;              
+  left: 165px;
+  width: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  z-index: 2;
+}
+
+.hero-copy {
+  width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;            
+}
+
+.hero-copy h1 {
+  font-size: 60px;
+  line-height: 76px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.hero-copy p {
+  max-width: 490px;         
+  font-size: 16px;
+  line-height: 22px;        
+  color: #555;
+}
+
+.hero-btn {
+  height: 52px;
+  padding: 0 40px;
+  background: #4361ee;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.hero-btn:hover { background: #3651d4; }
+
+.hero-img {
+  position: absolute;
+  top: 22px;              
+  left: 644px;
+  height: 529px;
+  width: auto;
+  z-index: 1;
+}
+
+
+/* Laptop: keep the side-by-side layout, just shrink the type a touch */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .hero-text { left: 60px; width: 460px; }
+  .hero-copy h1 { font-size: 52px; line-height: 62px; }
+  .hero-img { left: 540px; }
+}
+
+/* Tablet: stack text above the image */
+@media (max-width: 1023px) {
+  .hero { height: auto; display: flex; flex-direction: column; padding: 40px 20px 0; }
+  .hero-text { position: static; width: 100%; max-width: 540px; }
+  .hero-copy { width: 100%; }
+  .hero-copy p { max-width: 100%; }
+  .hero-copy h1 { font-size: 40px; line-height: 1.2; }
+  .hero-img { position: static; width: 100%; height: auto; margin-top: 24px; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero { padding: 32px 16px 0; }
+  .hero-copy { gap: 12px; }
+  .hero-copy h1 { font-size: 30px; line-height: 1.2; }
+  .hero-copy p { font-size: 14px; line-height: 20px; }
+  .hero-text { gap: 20px; }
+  .hero-btn { width: 100%; height: 48px; }
+}

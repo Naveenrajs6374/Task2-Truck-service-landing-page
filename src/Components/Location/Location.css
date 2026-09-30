@@ -1,0 +1,70 @@
+.location {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 541px;
+  margin: 0 auto;
+  background: #f4f4f4;
+  overflow: hidden;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.location-title {
+  position: absolute;
+  top: 96px;
+  left: 165px;
+  width: 506px;
+  height: 58px;
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 700;
+  color: #333;
+}
+
+.location-text {
+  position: absolute;
+  top: 195px;
+  left: 165px;
+  width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;                    
+}
+
+.location-text p {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 0.8);
+}
+
+.location-map {
+  position: absolute;
+  top: 0;
+  left: 732px;
+  width: 708px;
+  height: 541px;
+  display: block;
+}
+
+/* Laptop: keep side-by-side, shrink map a little */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .location-title, .location-text { left: 40px; }
+  .location-map { left: auto; right: 0; width: 55%; }
+}
+
+/* Tablet: stack text above the map */
+@media (max-width: 1023px) {
+  .location { height: auto; display: flex; flex-direction: column; gap: 24px; padding: 40px 20px 0; }
+  .location-title, .location-text, .location-map { position: static; width: 100%; height: auto; }
+  .location-title { font-size: 36px; line-height: 1.2; }
+  .location-map { margin: 0 -20px; width: calc(100% + 40px); }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .location { padding: 32px 16px 0; gap: 16px; }
+  .location-title { font-size: 26px; }
+  .location-text p { font-size: 14px; line-height: 20px; }
+  .location-map { height: 240px; object-fit: cover; }
+}
